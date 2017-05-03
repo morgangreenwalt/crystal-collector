@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector Game | Morgan Greenwalt</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<script type="text/javascript" src="../assets/javascript/game.js"></script>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>Welcome to Crystal Collector</h1>
+</div>
+
+<div class="container">
+	<div class="row text-center">
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-3 crystal">
+					<div class="crystal-1">
+						<img src="../assets/images/red-crystal.png" alt="red crystal image" width="250px" height="200px">
+						<p class="crystal-number-1"></p>
+					</div>
+				</div>
+				<div class="col-md-3 crystal">
+					<div class="crystal-2">
+						<img src="../assets/images/blue-crystal.png" alt="blue crystal image" width="250px" height="200px">
+					</div>	
+				</div>
+				<div class="col-md-3 crystal">
+					<div class="crystal-3">
+						<img src="../assets/images/silver-crystal.png" alt="silver crystal image" width="250px" height="200px">
+					</div>
+				</div>
+				<div class="col-md-3 crystal">
+					<div class="crystal-4">
+						<img src="../assets/images/purple-crystal.png" alt="red crystal image" width="250px" height="200px">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-5 col-md-offset-1 computer-score">
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Computer Score</h3>
+					  </div>
+					   <div class="panel-body">
+					  	<h6 id="computer-score-value"</h6>
+					  </div>
+					</div>
+				</div>
+				<div class="col-md-5 col-md-offset-1 player-score">
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Player Score</h3>
+					  </div>
+					  <div class="panel-body">
+					  	<h6 id="player-score-value"</h6>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<aside class="col-md-4">
+			<aside class="row">
+				<aside class="col-md-offset-3">
+					<div class="panel panel-default score">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">Records</h3>
+					  </div>
+					  <div class="panel-body">
+					    	<h4>Wins</h4>
+					    	<p class="wins"></p>
+							<h4>Losses</h4>
+							<p class="losses"></p>
+					  </div>
+					</div>
+				</aside>
+			</aside>
+		</aside>
+	</div>
+</div>
+
+</body>
+</html>

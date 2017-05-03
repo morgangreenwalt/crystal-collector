@@ -1,0 +1,16 @@
+body {
+	
+}
+
+.player-score, .computer-score {
+	margin-top: 20px;
+}
+
+.score {
+	height: 310px;
+}
+
+h4 {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
