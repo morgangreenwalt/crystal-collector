@@ -7,7 +7,7 @@ var crystalValues = [];
 while(lowEndCrystal <= highEndCrystal){
    crystalValues.push(lowEndCrystal++);
 }
-var crystalNumber = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+//var crystalNumber = crystalValues[Math.floor(Math.random()* crystalValues.length)];
 
 //Define Computer Score 
 var lowEndComputer = 19;
@@ -21,10 +21,7 @@ $("#computer-score-value").append(computerScore);
 
 //Define Player Score
 var playerScore = 0;
-$("#player-score-value").append(playerScore);
-var playersTotal = firstCrystal + secondCrystal + thirdCrystal + fourthCrystal;
-//var playerScore = playersTotal;
-//$("#player-score-value").append(playerScore);
+$("#player-score-value").html(playerScore);
 
 //Define Wins and Losses
 var wins = 0;
@@ -33,36 +30,74 @@ var losses = 0;
 $(".losses").html(losses);
 
 //Assign Random Values to Crystals
-var firstCrystal = crystalNumber+3;
-var secondCrystal = crystalNumber+5;
-var thirdCrystal = crystalNumber-2;
-var fourthCrystal = crystalNumber-4;
+var firstCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+var secondCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+var thirdCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+var fourthCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
 
+//Testing
+console.log(firstCrystal);
+console.log(secondCrystal);
+console.log(thirdCrystal);
+console.log(fourthCrystal);
+
+//Click Events Assigning Values to Crystals
 $(".crystal-1").on("click", function (){
 	$(".crystal-number-1").hide(firstCrystal);
-	
-
+	playerScore = playerScore + firstCrystal;
+	$("#player-score-value").html(playerScore);
+	check();
 });
 
 $(".crystal-2").on("click", function (){
-	$(".crystal-2").append(secondCrystal);
+	$(".crystal-number-2").hide(secondCrystal);
+	playerScore = playerScore + secondCrystal;
+	$("#player-score-value").html(playerScore);
+	check();
 });
 
 $(".crystal-3").on("click", function (){
-	$(".crystal-3").append(thirdCrystal);
+	$(".crystal-number-3").hide(thirdCrystal);
+	playerScore = playerScore + thirdCrystal;
+	$("#player-score-value").html(playerScore);
+	check();
 });
 
 $(".crystal-4").on("click", function (){
-	$(".crystal-4").append(fourthCrystal);
+	$(".crystal-number-4").hide(fourthCrystal);
+	playerScore = playerScore + fourthCrystal;
+	$("#player-score-value").html(playerScore);
+	check();
 });
 
 //Display Wins & Losses
-if (computerScore > playerScore) {
-	losses++;
-}
 
-else {
-	wins++;
+function check() {
+	if (playerScore === computerScore) {
+		//alert("You win!");
+		wins++;
+		$(".wins").html(wins);
+		resetGame();
+
+	}
+
+	else if (playerScore > computerScore){
+		//alert("You went over! Try again.")
+		losses++;
+		$(".losses").html(losses);
+		resetGame();
+	}
+
+}
+	function resetGame (){
+		playerScore = 0;
+		$("#player-score-value").html(playerScore);
+		computerScore = computerValues[Math.floor(Math.random()* computerValues.length)];
+		$("#computer-score-value").html(computerScore);
+		firstCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+		secondCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+		thirdCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
+		fourthCrystal = crystalValues[Math.floor(Math.random()* crystalValues.length)];
 }
 
 });
