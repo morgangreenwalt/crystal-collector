@@ -1,4 +1,4 @@
-Crystal Collector Game
+Crystal Collector
 -------
 
 An interactive game that randomly assigns values to crystals. User will continuously select crystals to rack up points. User must match the computer's score to win. Game on! 
